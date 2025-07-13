@@ -16,31 +16,12 @@ A real-time keylogger detection tool built with Python for Windows systems. This
 - 🧪 Unit test support with basic test case
 
 ---
-📁 Project Structure
-
-
-keylogger-detector/
-│
-├── detector/
-│   ├── __init__.py
-│   ├── monitor.py              # Scans for suspicious processes
-│   ├── utils.py                # Helper functions (e.g., name matching)
-│   └── keyboard_hook_check.py  # Detects global keyboard hooks (Windows)
-│
-├── tests/
-│   └── test_monitor.py         # Unit test for keyword matching
-│
-├── gui.py                      # GUI entry point
-├── run.py                      # CLI entry point
-├── requirements.txt            # Python dependencies
-├── README.md                   # Documentation
-└── LICENSE                     # MIT License
 
 
 🧑‍💻 Installation
 1. Clone the Repository
 
-git clone https://github.com/YOUR_USERNAME/keylogger-detector.git
+git clone https://github.com/rajshevde-01/keylogger-detector.git
 cd keylogger-detector
 
 1. Create and Activate a Virtual Environment
