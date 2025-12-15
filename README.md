@@ -92,4 +92,4 @@ If you found this tool useful, please ⭐️ star the repository to show your su
  Real-time system tray alerts
  Network traffic inspection for exfiltration attempts
  Export scan results to .txt or .csv
- Automatically block or kill flagged processes
+ Automatically block or kill flagged process
