@@ -1,95 +1,101 @@
-# 🔐 Keylogger Detector
+# Keylogger Detector
 
+Detects suspicious processes and global keyboard hooks on Windows. The project ships with both a CLI and a Tkinter GUI for quick checks and continuous monitoring.
 
-A real-time keylogger detection tool built with Python for Windows systems. This tool detects suspicious processes and active global keyboard hooks — common indicators of keylogging behavior. It includes both a **Command-Line Interface (CLI)** and a **Graphical User Interface (GUI)** built with Tkinter.
+## Features
 
----
+- Process scanning for suspicious names (e.g., `keylog`, `logger`, `hook`).
+- Global keyboard hook detection using Windows APIs (`pywin32`).
+- CLI mode for fast terminal checks.
+- GUI mode with start/stop monitoring and on-demand hook scans.
+- Configurable scan interval (default: 10 seconds).
+- Lightweight and easy to extend.
 
-## 🚀 Features
+## Requirements
 
-- 🕵️ Detects suspicious process names (`keylog`, `logger`, `hook`, etc.)
-- 🧠 Detects global keyboard hook activity using Windows APIs (`pywin32`)
-- 🖥️ GUI version for interactive use (start/stop monitoring, run hook scan)
-- 💻 CLI version for terminal-based detection
-- 🔁 Scans continuously every 10 seconds (customizable)
-- ✅ Lightweight and easy to extend
-- 🧪 Unit test support with basic test case
+- Windows 10/11
+- Python 3.8+
+- Dependencies: `psutil`, `pywin32`, `colorama` (Tkinter ships with Python)
 
----
+## Install
 
+1. Clone the repo.
 
-🧑‍💻 Installation
-1. Clone the Repository
-
+```bash
 git clone https://github.com/rajshevde-01/keylogger-detector.git
 cd keylogger-detector
+```
 
-1. Create and Activate a Virtual Environment
+2. Create and activate a virtual environment.
 
+```bash
 python -m venv venv
-
-# Windows
-
 venv\Scripts\activate
+```
 
-# Linux/macOS (GUI won't work)
+3. Install dependencies.
 
-source venv/bin/activate
-
-3. Install Dependencies
-
+```bash
 pip install -r requirements.txt
+```
 
-▶️ Usage
-👉 Run the CLI Version
+## Usage
 
+Run the CLI:
+
+```bash
 python run.py
+```
 
-✅ Checks for global keyboard hook interference (Windows only)
+Run the GUI:
 
-🔄 Continuously scans for suspicious processes
-
-👉 Run the GUI Version
-
+```bash
 python gui.py
-🟢 Click Start Monitoring to begin live process detection
+```
 
-🛡️ Click Check Keyboard Hook to scan for suspicious keyboard API hooks
+GUI tips:
 
-🧪 Run Unit Tests
+- Click Start Monitoring to begin process detection.
+- Click Check Keyboard Hook to run a hook scan.
 
+## Tests
+
+```bash
 python -m unittest discover tests
-⚙️ Requirements
-Python 3.8+
+```
 
-Windows OS (for keyboard hook detection)
+## Build an .exe (optional)
 
-Dependencies:
-psutil
-pywin32
-colorama
-tkinter (comes built-in with Python)
-
-🏁 Convert to .exe (Optional)
-Use PyInstaller to convert GUI into a Windows executable:
-
+```bash
 pip install pyinstaller
 pyinstaller --noconsole --onefile gui.py
-.exe will be generated inside the dist/ folder
+```
 
-🛡️ License
-This project is licensed under the MIT License.
+The executable will be generated in `dist/`.
 
-👤 Author
+## Project Layout
+
+```text
+gui.py
+run.py
+detector/
+	keyboard_hook_check.py
+	monitor.py
+	utils.py
+tests/
+```
+
+## License
+
+MIT
+
+## Author
+
 Raj Shevde
-📧 rajshevde_01
 
-⭐️ Star This Repo
-If you found this tool useful, please ⭐️ star the repository to show your support!
+## Roadmap
 
-🔮 Future Enhancements
- Show which process installed a keyboard hook
- Real-time system tray alerts
- Network traffic inspection for exfiltration attempts
- Export scan results to .txt or .csv
- Automatically block or kill flagged process
+- Show which process installed a keyboard hook.
+- System tray alerts.
+- Export scan results to TXT/CSV.
+- Optional auto-kill for flagged processes.
