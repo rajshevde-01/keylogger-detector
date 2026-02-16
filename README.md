@@ -17,7 +17,7 @@ Detects suspicious processes and global keyboard hooks on Windows. The project s
 - Python 3.8+
 - Dependencies: `psutil`, `pywin32`, `colorama` (Tkinter ships with Python)
 
-## Install
+### Install
 
 1. Clone the repo.
 
@@ -33,7 +33,8 @@ python -m venv venv
 venv\Scripts\activate
 ```
 
-3. Install dependencies.
+
+3. **Install required dependencies** (this step is *required*):
 
 ```bash
 pip install -r requirements.txt
@@ -73,16 +74,20 @@ pyinstaller --noconsole --onefile gui.py
 
 The executable will be generated in `dist/`.
 
-## Project Layout
+### Project Layout
 
 ```text
-gui.py
-run.py
-detector/
-	keyboard_hook_check.py
-	monitor.py
-	utils.py
-tests/
+keylogger-detector/
+├── gui.py
+├── run.py
+├── requirements.txt
+├── README.md
+├── detector/
+│   ├── keyboard_hook_check.py
+│   ├── monitor.py
+│   ├── utils.py
+│   └── __pycache__/
+└── tests/
 ```
 
 ## License
